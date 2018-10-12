@@ -7,11 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CGAPokemon.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface PokemonDetailViewController : UIViewController
-
+@property CGAPokemon *pokemon;
 @end
 
 NS_ASSUME_NONNULL_END

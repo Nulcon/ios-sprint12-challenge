@@ -31,10 +31,10 @@
 		135A46312170F42A002511EF /* PokedexTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PokedexTableViewController.m; sourceTree = "<group>"; };
 		135A46342170F45F002511EF /* PokemonDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PokemonDetailViewController.h; sourceTree = "<group>"; };
 		135A46352170F45F002511EF /* PokemonDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PokemonDetailViewController.m; sourceTree = "<group>"; };
-		135A46372170F535002511EF /* ios-sprint12-challenge-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ios-sprint12-challenge-Bridging-Header.h"; sourceTree = "<group>"; };
 		135A46382170F535002511EF /* PokemonAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonAPI.swift; sourceTree = "<group>"; };
 		135A463B2170F5E6002511EF /* CGAPokemon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CGAPokemon.h; sourceTree = "<group>"; };
 		135A463C2170F5E6002511EF /* CGAPokemon.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CGAPokemon.m; sourceTree = "<group>"; };
+		1389D28121710609005FF848 /* ios-sprint12-challenge-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ios-sprint12-challenge-Bridging-Header.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,13 +67,13 @@
 		135A46182170F058002511EF /* ios-sprint12-challenge */ = {
 			isa = PBXGroup;
 			children = (
+				1389D28121710609005FF848 /* ios-sprint12-challenge-Bridging-Header.h */,
 				135A46192170F058002511EF /* AppDelegate.h */,
 				135A461A2170F058002511EF /* AppDelegate.m */,
 				135A46332170F430002511EF /* View Controllers */,
 				135A463E2170F5EA002511EF /* Model */,
 				135A463A2170F53A002511EF /* Networking */,
 				135A462F2170F204002511EF /* Resources */,
-				135A46372170F535002511EF /* ios-sprint12-challenge-Bridging-Header.h */,
 			);
 			path = "ios-sprint12-challenge";
 			sourceTree = "<group>";

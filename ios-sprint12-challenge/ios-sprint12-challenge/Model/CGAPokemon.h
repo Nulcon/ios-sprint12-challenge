@@ -15,6 +15,9 @@ NS_ASSUME_NONNULL_BEGIN
 - (nullable instancetype)initWithDictionary:(NSDictionary *)dictionary;
 @property NSString *name;
 @property NSString *url;
+@property (nullable) NSArray *abilities;
+@property (nullable) NSNumber *identifier;
+@property (nullable) NSURL *sprite;
 @end
 
 NS_ASSUME_NONNULL_END
