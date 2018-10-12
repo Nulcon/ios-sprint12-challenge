@@ -12,7 +12,7 @@
         <!--Pokedex-->
         <scene sceneID="4CI-gQ-ecc">
             <objects>
-                <tableViewController id="q6z-kW-haZ" sceneMemberID="viewController">
+                <tableViewController id="q6z-kW-haZ" customClass="PokedexTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="aQg-DP-sOy">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -35,7 +35,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="iG5-Zd-1ka" kind="show" id="RoB-1D-qgu"/>
+                                    <segue destination="iG5-Zd-1ka" kind="show" identifier="PokemonDetailSegue" id="RoB-1D-qgu"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -50,10 +50,10 @@
             </objects>
             <point key="canvasLocation" x="589" y="250"/>
         </scene>
-        <!--View Controller-->
+        <!--Pokemon Detail View Controller-->
         <scene sceneID="3gq-wV-5sL">
             <objects>
-                <viewController id="iG5-Zd-1ka" sceneMemberID="viewController">
+                <viewController id="iG5-Zd-1ka" customClass="PokemonDetailViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vof-0f-jao">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
