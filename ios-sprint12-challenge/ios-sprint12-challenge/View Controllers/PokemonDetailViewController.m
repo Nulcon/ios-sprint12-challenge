@@ -23,17 +23,21 @@ static void *pokemonContext = &pokemonContext;
     [self updateViews];
     if ([self pokemon]) {
         [self.pokemon addObserver:self forKeyPath:@"abilities" options:NSKeyValueObservingOptionNew context:pokemonContext];
+        [self.pokemon addObserver:self forKeyPath:@"sprite" options:NSKeyValueObservingOptionNew context:pokemonContext];
     }
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
 {
     if (context == pokemonContext) {
+        if ([keyPath isEqualToString:@"sprite"]) {
+            UIImage *image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:self.pokemon.sprite]]];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [[self pokemonSpriteImageView] setImage:image];
+            });
+        }
         if ([keyPath isEqualToString:@"abilities"]) {
             NSMutableArray *abilitiesArray = [[NSMutableArray alloc] init];
-            NSLog(@"%@", self.pokemon.sprite);
-            UIImage *image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:self.pokemon.sprite]]];
-            
             for (int i = 0; i < self.pokemon.abilities.count; i++) {
                 NSString *ability = self.pokemon.abilities[i][@"ability"][@"name"];
                 [abilitiesArray addObject:ability];
@@ -42,7 +46,6 @@ static void *pokemonContext = &pokemonContext;
             dispatch_async(dispatch_get_main_queue(), ^{
                 [[self pokemonAbilitiesLabel] setText:abilities];
                 [[self pokemonIdLabel] setText:[NSString stringWithFormat:@"%@", self.pokemon.identifier]];
-                [[self pokemonSpriteImageView] setImage:image];
             });
         }
     } else {

@@ -58,10 +58,11 @@ class PokemonAPI: NSObject {
                     let pokemonIdentifier = dictionary["id"] as? NSNumber else {
                     return
                 }
-
+                let pokemonSprite = pokemonSprites["front_default"] as! String
+                
                 pokemon.abilities = pokemonAbilities
                 pokemon.identifier = pokemonIdentifier
-//                pokemon.sprite = pokemonSprites["front_default"]
+                pokemon.sprite = pokemonSprite
             } catch {
                 return
             }

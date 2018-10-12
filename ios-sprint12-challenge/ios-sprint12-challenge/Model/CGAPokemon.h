@@ -17,7 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property NSString *url;
 @property (nullable) NSArray *abilities;
 @property (nullable) NSNumber *identifier;
-@property (nullable) NSURL *sprite;
+@property (nullable) NSString *sprite;
 @end
 
 NS_ASSUME_NONNULL_END
