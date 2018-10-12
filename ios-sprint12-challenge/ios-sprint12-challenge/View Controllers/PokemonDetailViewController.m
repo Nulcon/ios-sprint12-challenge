@@ -21,10 +21,7 @@ static void *pokemonContext = &pokemonContext;
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [self updateViews];
-    if ([self pokemon]) {
-        [self.pokemon addObserver:self forKeyPath:@"abilities" options:NSKeyValueObservingOptionNew context:pokemonContext];
-        [self.pokemon addObserver:self forKeyPath:@"sprite" options:NSKeyValueObservingOptionNew context:pokemonContext];
-    }
+    [self addObserverToPokemon];
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
@@ -57,6 +54,13 @@ static void *pokemonContext = &pokemonContext;
     if ([self pokemon]) {
         NSString *pokemonName = [[self pokemon] name];
         [[self pokemonNameLabel] setText:pokemonName];
+    }
+}
+
+- (void)addObserverToPokemon {
+    if ([self pokemon]) {
+        [self.pokemon addObserver:self forKeyPath:@"abilities" options:NSKeyValueObservingOptionNew context:pokemonContext];
+        [self.pokemon addObserver:self forKeyPath:@"sprite" options:NSKeyValueObservingOptionNew context:pokemonContext];
     }
 }
 @end
