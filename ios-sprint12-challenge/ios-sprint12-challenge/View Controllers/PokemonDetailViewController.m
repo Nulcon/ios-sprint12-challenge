@@ -26,7 +26,6 @@ static void *pokemonContext = &pokemonContext;
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
 {
-    if (context == pokemonContext) {
         if ([keyPath isEqualToString:@"sprite"]) {
             UIImage *image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:self.pokemon.sprite]]];
             dispatch_async(dispatch_get_main_queue(), ^{
@@ -45,9 +44,6 @@ static void *pokemonContext = &pokemonContext;
                 [[self pokemonIdLabel] setText:[NSString stringWithFormat:@"%@", self.pokemon.identifier]];
             });
         }
-    } else {
-        [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
-    }
 }
 
 - (void)updateViews {
